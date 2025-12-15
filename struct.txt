@@ -1,0 +1,30 @@
+src/
+├── app.js
+├── server.js
+│
+├── config/
+│   └── database.js
+│
+├── models/
+│   ├── topic.model.js
+│   └── vote.model.js
+│
+├── controllers/
+│   └── topic.controller.js
+│
+├── routes/
+│   └── topic.routes.js
+│
+├── views/
+│   ├── layouts/
+│   │   └── main.hbs
+│   ├── topics/
+│   │   ├── index.hbs
+│   │   ├── create.hbs
+│   │   └── edit.hbs
+│
+├── public/
+│   ├── js/
+│   │   └── votes.js
+│   └── css/
+│       └── styles.css
