@@ -28,3 +28,23 @@ src/
 │   │   └── votes.js
 │   └── css/
 │       └── styles.css
+
+
+src/
+├── app.js
+├── server.js
+│
+├── config/
+│   └── database.js
+│
+├── models/
+├── controllers/
+├── routes/
+│
+├── views/
+│   └── layouts/
+│       └── main.hbs
+│
+└── public/
+    ├── js/
+    └── css/
