@@ -1,3 +1,4 @@
+require('./models/topic.model');
 const app = require('./app');
 const { sequelize } = require('./config/database');
 
