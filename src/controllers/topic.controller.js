@@ -97,3 +97,36 @@ exports.deleteTopic = async (req, res) => {
     res.status(500).send('Error al eliminar el tema');
   }
 };
+
+/**
+ * POST /topics/:id/vote
+ * vota un tema
+ */
+exports.voteTopic = async (req, res) => {
+  const { id } = req.params;
+  const { value } = req.body; // +1 o -1
+
+  try {
+    const topic = await Topic.findByPk(id);
+
+    if (!topic) {
+      return res.status(404).json({ message: 'Tema no encontrado' });
+    }
+
+    // Evitar votos negativos
+    if (topic.votesCount + value < 0) {
+      return res.status(400).json({ message: 'Los votos no pueden ser negativos' });
+    }
+
+    topic.votesCount += value;
+    await topic.save();
+
+    res.json({
+      id: topic.id,
+      votesCount: topic.votesCount,
+      updatedAt: topic.updatedAt,
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Error al votar' });
+  }
+};

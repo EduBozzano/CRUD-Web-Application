@@ -11,4 +11,7 @@ router.post('/topics/:id', topicController.updateTopic);
 
 router.post('/topics/:id/delete', topicController.deleteTopic);
 
+//ruta de votos
+router.post('/topics/:id/vote', topicController.voteTopic);
+
 module.exports = router;

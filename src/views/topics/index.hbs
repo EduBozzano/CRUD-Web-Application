@@ -2,13 +2,19 @@
 
 <a href="/topics/create">➕ Crear nuevo tema</a>
 
-<ul>
+<ul id="topics-container">
   {{#each topics}}
-    <li>
+    <li class="topic" data-id="{{this.id}}" data-updated="{{this.updatedAt}}">
       <h3>{{this.title}}</h3>
       <p>{{this.description}}</p>
 
-      <strong>Votos: {{this.votesCount}}</strong>
+      <strong>Votos: <span class="votes">{{this.votesCount}}</span></strong>
+
+      <!-- botones de votacion -->
+      <div>
+        <button class="vote-btn" data-value="1">+1</button>
+        <button class="vote-btn" data-value="-1">-1</button>
+      </div>
 
       <div>
         <a href="/topics/{{this.id}}/edit">✏️ Editar</a>
