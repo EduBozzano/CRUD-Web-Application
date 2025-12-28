@@ -1,3 +1,4 @@
+const topicRoutes = require('./routes/topic.routes');
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
@@ -27,5 +28,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
   res.render('home', { title: 'Learning Topics' });
 });
+
+//rutas principales
+app.use(topicRoutes);
 
 module.exports = app;
