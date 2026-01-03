@@ -1,7 +1,25 @@
+<!--
 <h1>Crear tema</h1>
 
 <form action="/topics" method="POST">
   <input type="text" name="title" placeholder="Título" required />
   <textarea name="description" placeholder="Descripción" required></textarea>
   <button type="submit">Crear</button>
+</form>
+-->
+<h1>Crear nuevo tema</h1>
+
+<form class="form-card" action="/topics" method="POST">
+  <label>
+    Título
+    <input type="text" name="title" required>
+  </label>
+
+  <label>
+    Descripción
+    <textarea name="description" rows="5" required></textarea>
+  </label>
+
+  <button type="submit" class="primary-btn">Crear</button>
+  <a href="/topics" class="cancel-link">Cancelar</a>
 </form>
