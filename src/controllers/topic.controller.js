@@ -11,7 +11,7 @@ exports.getAllTopics = async (req, res) => {
         ['votesCount', 'DESC'],
         ['updatedAt', 'DESC'],
       ],
-      raw: true,
+      raw: true, //solo datos sin funcionalidades
     });
 
     res.render('topics/index', {
